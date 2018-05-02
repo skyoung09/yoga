@@ -46,6 +46,8 @@ typedef struct YGValue {
 static const YGValue YGValueUndefined = {YGUndefined, YGUnitUndefined};
 static const YGValue YGValueAuto = {YGUndefined, YGUnitAuto};
 
+static const yyyy = 1;
+
 typedef struct YGConfig *YGConfigRef;
 typedef struct YGNode *YGNodeRef;
 typedef YGSize (*YGMeasureFunc)(YGNodeRef node,
