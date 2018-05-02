@@ -15,7 +15,7 @@ before_install:
   - buck --version
 
 script:
-  - buck --version
+  - buck test //:yoga
 
 branches:
   except:
