@@ -60,7 +60,7 @@ deploy:
   github-token: $GITHUB_TOKEN
   fqdn: yogalayout.com
   local-dir: website/public
-  email: yogabot@fb.com
+  email: yogabot123@fb.com
   name: Yoga-bot
   keep-history: true
   on:
