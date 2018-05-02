@@ -12,7 +12,6 @@ before_install:
   # Install Buck
   - brew tap facebook/fb
   - brew install buck
-  - brew install ant python git watchman
   - buck --version
 
 script:
