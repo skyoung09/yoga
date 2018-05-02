@@ -110,7 +110,7 @@ script:
       xcodebuild build -workspace YogaKit/YogaKitSample/YogaKitSample.xcworkspace -scheme YogaKitSample -sdk iphonesimulator | xcpretty -c
     fi
 
-  # Android
+  # Android_
   - |
     if [[ $TARGET = "android" ]]; then
       buck build --verbose 0 //android/sample:sample
