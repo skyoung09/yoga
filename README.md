@@ -1,11 +1,7 @@
 # Yoga [![CocoaPods](https://img.shields.io/cocoapods/v/YogaKit.svg)](http://cocoapods.org/pods/YogaKit) [![npm](https://img.shields.io/npm/v/yoga-layout.svg)](https://www.npmjs.com/package/yoga-layout) [![bintray](https://img.shields.io/bintray/v/facebook/maven/com.facebook.yoga:yoga.svg)](https://bintray.com/facebook/maven/com.facebook.yoga%3Ayoga/_latestVersion) [![NuGet](https://img.shields.io/nuget/v/Facebook.Yoga.svg)](https://www.nuget.org/packages/Facebook.Yoga)
 
-[![C Status](https://badges.herokuapp.com/travis/facebook/yoga?env=TARGET=c&label=C)](https://travis-ci.org/facebook/yoga)
-[![Java Status](https://badges.herokuapp.com/travis/facebook/yoga?env=TARGET=java&label=Java)](https://travis-ci.org/facebook/yoga)
-[![iOS Status](https://badges.herokuapp.com/travis/facebook/yoga?env=TARGET=ios&label=iOS)](https://travis-ci.org/facebook/yoga)
-[![.NET Status](https://badges.herokuapp.com/travis/facebook/yoga?env=TARGET=net&label=.NET)](https://travis-ci.org/facebook/yoga)
-[![JavaScript Status](https://badges.herokuapp.com/travis/facebook/yoga?env=TARGET=js&label=JavaScript)](https://travis-ci.org/facebook/yoga)
-[![Android Status](https://badges.herokuapp.com/travis/facebook/yoga?env=TARGET=android&label=Android)](https://travis-ci.org/facebook/yoga)
+[![C Status](https://badges.herokuapp.com/travis/facebook/yoga?env=TARGET=c&label=C)](https://travis-ci.org/skyoung09/yoga)
+[![Java Status](https://badges.herokuapp.com/travis/facebook/yoga?env=TARGET=java&label=Java)](https://travis-ci.org/skyoung09/yoga)
 
 [![Visual Studio Team services](https://img.shields.io/vso/build/rumar/fe6d27b5-e424-4f61-b8f6-e2ec2f8755fb/1.svg?label=vsts-windows)]()
 [![Visual Studio Team services](https://img.shields.io/vso/build/rumar/fe6d27b5-e424-4f61-b8f6-e2ec2f8755fb/2.svg?label=vsts-osx)]()
