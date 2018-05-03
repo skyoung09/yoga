@@ -13,10 +13,6 @@ compiler: clang
 env:
   - TARGET=c
   - TARGET=java
-  - TARGET=net
-  - TARGET=ios
-  - TARGET=js
-  - TARGET=android
 
 before_install:
   - brew update > /dev/null
@@ -30,55 +26,6 @@ before_install:
       export PATH=$JAVA_HOME/bin:$PATH
     fi
 
-  # .NET
-  - |
-    if [[ $TARGET = "net" ]]; then
-      brew install mono
-    fi
-
-  # iOS
-  - |
-    if [[ $TARGET = "ios" ]]; then
-      brew outdated xctool || brew upgrade xctool;
-      gem install xcpretty --no-document --quiet;
-      gem install cocoapods --pre --no-document --quiet;
-      pod repo update --silent;
-      pod install --project-directory=YogaKit/YogaKitSample/;
-    fi
-
-  # Emscripten (used for js tests)
-  # Note: cannot be ran on Linux (because it will compile Clang from its sources :|)
-  - |
-    if [[ $TARGET = "js" ]]; then
-      wget -O /tmp/emsdk-portable.tar.gz https://s3.amazonaws.com/mozilla-games/emscripten/releases/emsdk-portable.tar.gz &&
-      tar xf /tmp/emsdk-portable.tar.gz -C /tmp/ &&
-      /tmp/emsdk-portable/emsdk install latest 2>&1 | grep -v '^x ' &&
-      /tmp/emsdk-portable/emsdk activate latest
-    fi
-
-  # Android
-  - |
-    if [[ $TARGET = "android" ]]; then
-      brew cask install java;
-      export JAVA_HOME=$(/usr/libexec/java_home -v 1.8);
-      export PATH=$JAVA_HOME/bin:$PATH;
-      brew install android-sdk;
-      export ANDROID_SDK=/usr/local/Cellar/android-sdk/24.4.1_1;
-      export ANDROID_HOME=/usr/local/Cellar/android-sdk/24.4.1_1;
-      brew install lib32stdc++6 lib32z1;
-      echo y | $ANDROID_SDK/tools/android update sdk --filter android-19,addon-google_apis-google-19,build-tools-19.1.0 --no-ui;
-      echo y | $ANDROID_SDK/tools/android update sdk -u;
-    fi
-
-  # JavaScript
-  - |
-    if [[ $TARGET = "js" ]]; then (
-      cd javascript &&
-      npm install &&
-      unset CC && unset CXX && unset LINK &&
-      source /tmp/emsdk-portable/emsdk_env.sh &&
-      npm run build:browser
-    ) fi
 
 script:
   # C
@@ -96,30 +43,3 @@ script:
       buck test --verbose 0 //java:java
     fi
 
-  # .NET
-  - |
-    if [[ $TARGET = "net" ]]; then
-      sh csharp/tests/Facebook.Yoga/test_macos.sh
-    fi
-
-  # iOS
-  - |
-    if [[ $TARGET = "ios" ]]; then
-      buck test --verbose 0 //YogaKit:YogaKitTests --config cxx.default_platform=iphonesimulator-x86_64 &&
-      set -o pipefail &&
-      xcodebuild build -workspace YogaKit/YogaKitSample/YogaKitSample.xcworkspace -scheme YogaKitSample -sdk iphonesimulator | xcpretty -c
-    fi
-
-  # Android_
-  - |
-    if [[ $TARGET = "android" ]]; then
-      buck build --verbose 0 //android/sample:sample
-    fi
-
-  # JavaScript
-  - |
-    if [[ $TARGET = "js" ]]; then (
-      cd javascript &&
-      npm run test:all &&
-      npm run bench
-    ) fi
