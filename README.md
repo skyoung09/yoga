@@ -1,7 +1,6 @@
 # Yoga [![CocoaPods](https://img.shields.io/cocoapods/v/YogaKit.svg)](http://cocoapods.org/pods/YogaKit) [![npm](https://img.shields.io/npm/v/yoga-layout.svg)](https://www.npmjs.com/package/yoga-layout) [![bintray](https://img.shields.io/bintray/v/facebook/maven/com.facebook.yoga:yoga.svg)](https://bintray.com/facebook/maven/com.facebook.yoga%3Ayoga/_latestVersion) [![NuGet](https://img.shields.io/nuget/v/Facebook.Yoga.svg)](https://www.nuget.org/packages/Facebook.Yoga)
 
-[![C Status](https://badges.herokuapp.com/travis/skyoung09/yoga?env=TARGET=c&label=C)](https://travis-ci.org/skyoung09/yoga)
-[![Java Status](https://badges.herokuapp.com/travis/skyoung09/yoga?env=TARGET=java&label=Java)](https://travis-ci.org/skyoung09/yoga)
+[![C Status](<a href="https://travis-ci.org/skyoung09/yoga"><img src="https://img.shields.io/travis/skyoung09/yoga/mytravis.svg?style=flat-square" alt="Build Status"></a>)]
 
 ## Building
 Yoga builds with [buck](https://buckbuild.com). Make sure you install buck before contributing to Yoga. Yoga's main implementation is in C, with bindings to supported languages and frameworks. When making changes to Yoga please ensure the changes are also propagated to these bindings when applicable.
